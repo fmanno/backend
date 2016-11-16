@@ -29,9 +29,8 @@ addons:
       - xclip
 
 install:
-  - echo $PWD
-  - ls -al
   - cd $HOME
+  - mkdir -p $HOME/gopath/src/github.com/limetext
   - mv ${TRAVIS_BUILD_DIR} $HOME/gopath/src/github.com/limetext/backend
   - cd $HOME/gopath/src/github.com/limetext/backend
   - export TRAVIS_BUILD_DIR="$HOME/gopath/src/github.com/limetext/backend"
