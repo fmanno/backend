@@ -29,8 +29,12 @@ addons:
       - xclip
 
 install:
+  - cd $HOME
+  - mkdir -p $HOME/gopath/src/github.com/limetext
+  - mv ${TRAVIS_BUILD_DIR} $HOME/gopath/src/github.com/limetext/backend
+  - cd $HOME/gopath/src/github.com/limetext/backend
+  - export TRAVIS_BUILD_DIR="$HOME/gopath/src/github.com/limetext/backend"
   - make travis cover_dep glide tasks
-
 script:
   - make travis_test
   - make check_fmt
